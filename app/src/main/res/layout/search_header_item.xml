@@ -9,12 +9,15 @@
     android:layout_height="20dp"
     android:background="@mipmap/r5"
     android:layout_gravity="center"
+    android:layout_marginLeft="10dp"
     />
     <TextView
+        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/search_header_item_txt"
         android:gravity="center"
+        android:textColor="#ffffff"
         android:layout_gravity="center"
         android:text="ssssssss"
         />

@@ -58,8 +58,11 @@ public class SearchHeaderAdapter extends BaseAdapter {
            holder = (MyViewHolder) convertView.getTag();
         }
         SearchBean.DataBean dataBean = list.get(position);
-        holder.txt.setText(dataBean.getChallenge().getCha_name());
-
+        if(dataBean.getType()==3)
+        {holder.txt.setText(dataBean.getMusic().getTitle());}
+        else {
+            holder.txt.setText(dataBean.getChallenge().getCha_name());
+        }
         return convertView;
     }
     class MyViewHolder{

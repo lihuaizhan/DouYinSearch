@@ -1,5 +1,6 @@
 package lihuaizhan.youhbk.com.douyinsearch.view;
 
+import lihuaizhan.youhbk.com.douyinsearch.bean.SearchBanner;
 import lihuaizhan.youhbk.com.douyinsearch.bean.SearchBean;
 
 /**
@@ -8,4 +9,5 @@ import lihuaizhan.youhbk.com.douyinsearch.bean.SearchBean;
 
 public interface ISearchActivity {
     public void show(SearchBean bean);
+    public void showBanner(SearchBanner banner);
 }

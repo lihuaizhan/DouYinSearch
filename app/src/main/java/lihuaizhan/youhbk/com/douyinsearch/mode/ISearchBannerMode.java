@@ -6,7 +6,6 @@ import lihuaizhan.youhbk.com.douyinsearch.network.OnListiner;
  * Created by Administrator on 2018/2/22.
  */
 
-public interface ISearchMode<T> {
-    public void getSearchData(OnListiner<T> onListiner);
+public interface ISearchBannerMode<T> {
     public void getBannerData(OnListiner<T> onListiner);
 }
