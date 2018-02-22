@@ -29,8 +29,8 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private List<String> list = new ArrayList<>();
     public static final int TYPE_HEADER = 0;
     public static final int TYPE_HEADERTWO = 1;
-    public static final int TYPE_HEADERThree = 3;
-    public static final int TYPE_NORMAL = 2;
+    public static final int TYPE_HEADERThree = 2;
+    public static final int TYPE_NORMAL = 3;
 
     public SearchAdapter(Context context, List<String> list) {
         this.context = context;
@@ -49,7 +49,12 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+        String s = list.get(position);
+        if(getItemViewType(position) == TYPE_HEADER) return;
+        if(getItemViewType(position) == TYPE_HEADERTWO) return;
+        if(getItemViewType(position) == TYPE_HEADERThree) return;
+        MyViewHolder holder1 = (MyViewHolder) holder;
+        holder1.txt.setText(s);
     }
     @Override
     public int getItemViewType(int position) {
@@ -58,7 +63,7 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         if(mHeaderThreeView == null) return TYPE_NORMAL;
         if(position == 0) return TYPE_HEADER;
         if(position == 1) return TYPE_HEADERTWO;
-        if(position == 3) return TYPE_HEADERThree;
+        if(position == 2) return TYPE_HEADERThree;
         return TYPE_NORMAL;
     }
     public void setHeaderView(View headerView) {
@@ -71,7 +76,7 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
     public void setHeaderThreeView(View headerThreeView) {
         mHeaderThreeView = headerThreeView;
-        notifyItemInserted(3);
+        notifyItemInserted(2);
     }
     public View getHeaderView() {
         return mHeaderView;
@@ -88,10 +93,10 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
     class MyViewHolder extends RecyclerView.ViewHolder
     {
-
+          private TextView txt;
         public MyViewHolder(View itemView) {
             super(itemView);
-
+            txt = itemView.findViewById(R.id.search_item_txt);
         }
     }
 }
