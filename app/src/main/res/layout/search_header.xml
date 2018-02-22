@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热搜内容"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+<GridView
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:id="@+id/search_grid"
+    android:numColumns="2"
+    ></GridView>
+</LinearLayout>
